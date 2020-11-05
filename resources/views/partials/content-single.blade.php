@@ -1,6 +1,6 @@
 <article class="w-full md:w-4/6 md:p-12 pt-0 pl-0 border-r">
   @include('partials.slider')
-  <div class="w-full block md:hidden pl-6 md:pl-0  ">
+  <div class="w-full block md:hidden">
     <div class="py-10">
       <h1 class="font-semibold">@field('extended_title')</h1>
       <p class="italic">@field('credits')</p>
