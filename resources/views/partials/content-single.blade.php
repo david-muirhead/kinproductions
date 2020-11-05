@@ -7,7 +7,7 @@
       <p>@field('blurb')</p>
     </div>
   </div>
-  <div class="entry-content w-full md:w-4/5 float-right pl-6 md:pl-0 md:pt-20">
+  <div class="entry-content w-full md:w-4/5 float-right  md:pt-20">
     @php the_content() @endphp
   </div>
 </article>

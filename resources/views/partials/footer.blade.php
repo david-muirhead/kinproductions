@@ -1,6 +1,6 @@
 <footer class=" invisible container-xl content-info bottom-0 flex justify-between mb-10">
   <ul class="uppercase font-akz text-gray-600 order-1 tracking-lilwide">
-    <li class="inline-block mr-12">
+    <li class="inline-block mr-4 md:mr-12">
       <a href="/about">About</a>
     </li>
     <li class="inline-block">

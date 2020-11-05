@@ -11,10 +11,12 @@ export default {
     //   localStorage.setItem('pageloadcount', '1');
     // });
 
-    $('#aoc').on('click', function() {   
-        $('.invisible').fadeIn();     
-        $('.invisible').removeClass('invisible');
+    $('#aoc').on('click', function() {     
+       
         $(this).fadeOut();
+        $(this).fadeOut(2000, function() {
+          $('.invisible').removeClass('invisible');
+        });
         $('#site-circle').fadeOut();
     });
   },
