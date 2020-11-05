@@ -60,7 +60,7 @@ $('#book-list div, #work-list div, #news-list div').slick({
   dots: false,
   slidesToShow: 2,
   autoplay: false,
-  autoplaySpeed: 1500,
+  autoplaySpeed: 1700,
   infinite: true,
   arrows: false,
   variableWidth: true,
