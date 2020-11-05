@@ -6,6 +6,8 @@ module.exports = {
     // standardFontWeights: true
   },
   purge: [
+    'app/**/*.php',
+    'resources/**/**/*.php',
   ],
   target: "relaxed",
   prefix: "",
