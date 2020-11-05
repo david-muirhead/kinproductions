@@ -1,4 +1,4 @@
-<header class="banner flex container-xl h-24 mt-6 invisible relative">
+<header class="banner flex container-xl h-24 mt-6 invisible relative z-40">
   <div class="breadcrumbs">
     @php 
       if ( function_exists('yoast_breadcrumb') ) {

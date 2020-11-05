@@ -11,7 +11,8 @@ export default {
     //   localStorage.setItem('pageloadcount', '1');
     // });
 
-    $('#aoc').on('click', function() {        
+    $('#aoc').on('click', function() {   
+        $('.invisible').fadeIn();     
         $('.invisible').removeClass('invisible');
         $(this).fadeOut();
         $('#site-circle').fadeOut();
