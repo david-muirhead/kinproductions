@@ -30,7 +30,7 @@
             'post_type' => 'work'
           ])
           @posts
-            <h2 id="link-before-image" class=" link-before-image entry-title text-4xl uppercase inline-block text-peach-420 mb-0 mr-10" style-data="@hasfield('has_small_hero_image') bg-no-repeat @else bg-cover  @endfield" perm-data="'@hasfield('has_small_hero_image') @thumbnail('medium_large', false) @else @thumbnail('full', false) @endfield">@title</h2>
+            <h2 rel="preload" id="link-before-image" class=" link-before-image entry-title text-4xl uppercase inline-block text-peach-420 mb-0 mr-10" style-data="@hasfield('has_small_hero_image') bg-no-repeat @else bg-cover  @endfield" perm-data="'@hasfield('has_small_hero_image') @thumbnail('medium_large', false) @else @thumbnail('full', false) @endfield">@title</h2>
           @endposts
         </div>
       </a>
