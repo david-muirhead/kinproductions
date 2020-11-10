@@ -215,16 +215,14 @@ function the_breadcrumb() {
     }
 }
 
-function the_breadcrumbs( $post ) {
-  echo '<a href="'.home_url().'" rel="nofollow">Home</a>&nbsp;&nbsp;/&nbsp;&nbsp;';
-
-  $format = '<a href="%s" title="%s">%s</a>&nbsp;&nbsp;/&nbsp;&nbsp;';
-  $anc = array_map( 'get_post', array_reverse( (array) get_post_ancestors( $post ) ) );
-  $links = array_map( 'get_permalink', $anc );
-  foreach ( $anc as $i => $apost ) {
-    $title = apply_filters( 'the_title', $apost->post_title );
-    printf( $format, $links[$i], esc_attr($title), esc_html($title) );
-  }
-
-  echo apply_filters( 'the_title', $post->post_title );
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page(array(
+		'page_title' 	=> 'Kin Theme Settings',
+		'menu_title'	=> 'Kin Theme Settings',
+		'menu_slug' 	=> 'theme-general-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+	
 }

@@ -3,12 +3,12 @@ export default {
     // JavaScript to be fired on the home page
 
     $( document ).ready(function() {
-      if (localStorage.getItem('pageloadcount')) { 
+      if (sessionStorage.getItem('pageloadcount')) { 
         $('#aoc').hide();
         $('#site-circle').hide();
         $('.invisible').removeClass('invisible');
     } 
-      localStorage.setItem('pageloadcount', '1');
+      sessionStorage.setItem('pageloadcount', '1');
     });
 
     $('#aoc').on('click', function() {     

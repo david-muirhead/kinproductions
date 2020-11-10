@@ -58,9 +58,9 @@ $('.slider-wrapper').slick({
 
 $('#book-list div, #work-list div, #news-list div').slick({
   dots: false,
-  slidesToShow: 2,
   autoplay: false,
-  autoplaySpeed: 1700,
+  speed: 1700,
+  autoplaySpeed: 2000,
   infinite: true,
   arrows: false,
   variableWidth: true,
@@ -68,32 +68,40 @@ $('#book-list div, #work-list div, #news-list div').slick({
 });
 
 $('#book-list, #work-list, #news-list').hover(function () {
-  var targhettoImg = $(this).find('div .slick-current h2');
-  var attachmentA = targhettoImg.attr( 'perm-data' );
-  var styledata = targhettoImg.attr( 'style-data' );
+  var listBG = $(this).attr('image-data');
+  var listStyle = $(this).attr('bgstyle-data');
   var el = document.getElementsByClassName('image-back')[0];
-  el.style.backgroundImage = 'url('+attachmentA+')';
-  $('.image-back').removeClass('bg-cover');
-  $('.image-back').addClass(styledata);
-}, function () {
-  var el = document.getElementsByClassName('image-back')[0];
-  el.style.backgroundImage = 'url()';
-});
-
-$('#book-list, #work-list, #news-list').hover(function () {
+  el.style.backgroundImage = 'url('+listBG+')';
+  $('.image-back').addClass(listStyle);
   $(this).find('div').slick('play');
 }, function () {
+  var el = document.getElementsByClassName('image-back')[0];
+  el.style.backgroundImage = 'none';
+  $('.image-back').removeClass('bg-cover');
   $(this).find('div').slick('pause');
 });
 
-$('#book-list .sliding, #work-list .sliding, #news-list .sliding').on('afterChange', function(){
-  var attachmentA = $(this).find( '.slick-current h2' ).attr( 'perm-data' );
-  var styledata = $(this).find( '.slick-current h2' ).attr( 'style-data' );
-  var el = document.getElementsByClassName('image-back')[0];
-  el.style.backgroundImage = 'url('+attachmentA+')';
-  $('.image-back').removeClass('bg-cover');
-  $('.image-back').addClass(styledata);
-});
+// $('#book-list .sliding, #work-list .sliding, #news-list .sliding').on('afterChange', function(){
+//   var attachmentA = $(this).find( '.slick-current h2' ).attr( 'perm-data' );
+//   var styledata = $(this).find( '.slick-current h2' ).attr( 'style-data' );
+//   var el = document.getElementsByClassName('image-back')[0];
+//   el.style.backgroundImage = 'url('+attachmentA+')';
+//   $('.image-back').removeClass('bg-cover');
+//   $('.image-back').addClass(styledata);
+// });
+
+// $('#book-list, #work-list, #news-list').hover(function () {
+//   var targhettoImg = $(this).find('div .slick-current h2');
+//   var attachmentA = targhettoImg.attr( 'perm-data' );
+//   var styledata = targhettoImg.attr( 'style-data' );
+//   var el = document.getElementsByClassName('image-back')[0];
+//   el.style.backgroundImage = 'url('+attachmentA+')';
+//   $('.image-back').removeClass('bg-cover');
+//   $('.image-back').addClass(styledata);
+// }, function () {
+//   var el = document.getElementsByClassName('image-back')[0];
+//   el.style.backgroundImage = 'url()';
+// });
 
 $('.archive-link').hover(function () {
   var permData= $( this ).attr( 'perm-data' );
