@@ -2,7 +2,7 @@
 
 @section('content') 
   @while (have_posts()) @php the_post() @endphp
-    <div class="content-xl  flex pb-24">
+    <div class="content-xl  flex pb-16 mb-16 md:pb-32 md:mb-32 border-b border-black">
       <article class="w-full flex flex-col md:flex-row md:pr-12 border-r">
         <div class="order-2 md:order-1 entry-content w-full md:w-4/5 md:pl-0 md:pr-10">
           <span class="pb-10 hidden md:block">@thumbnail('full')</span>
@@ -27,5 +27,6 @@
         </div>
       </article>
     </div>
+    <hr class="p-6">
   @endwhile
 @endsection
