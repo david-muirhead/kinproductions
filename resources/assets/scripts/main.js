@@ -3,12 +3,14 @@ import 'jquery';
 
 // Import everything from autoload
 import './autoload/**/*'
+import  './modernizr.js';
 
 // import local dependencies
 import Router from './util/Router';
 import common from './routes/common';
 import home from './routes/home';
 import aboutUs from './routes/about';
+
 
 /** Populate Router instance with DOM routes */
 const routes = new Router({
@@ -67,19 +69,41 @@ $('#book-list div, #work-list div, #news-list div').slick({
   adaptiveHeight: false,
 });
 
-$('#book-list, #work-list, #news-list').hover(function () {
-  var listBG = $(this).attr('image-data');
-  var listStyle = $(this).attr('bgstyle-data');
-  var el = document.getElementsByClassName('image-back')[0];
-  el.style.backgroundImage = 'url('+listBG+')';
-  $('.image-back').addClass(listStyle);
-  $(this).find('div').slick('play');
-}, function () {
-  var el = document.getElementsByClassName('image-back')[0];
-  el.style.backgroundImage = 'none';
-  $('.image-back').removeClass('bg-cover');
-  $(this).find('div').slick('pause');
-});
+var isMobile = false;
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+  isMobile = true;
+}
+
+if(isMobile) {
+  $('#book-list, #work-list, #news-list').on('click', function(e) {
+     e.preventDefault();
+     var para = $(this);
+     if(para.hasClass('tapped')) {
+       window.location = $(this).attr('href');
+     } else {
+      var listBG = $(this).attr('image-data');
+      var listStyle = $(this).attr('bgstyle-data');
+      var el = document.getElementsByClassName('image-back')[0];
+      el.style.backgroundImage = 'url('+listBG+')';
+      $('.image-back').addClass(listStyle);
+      $(this).addClass('tapped');
+     }
+  });
+} else {
+  $('#book-list, #work-list, #news-list').hover(function () {
+    var listBG = $(this).attr('image-data');
+    var listStyle = $(this).attr('bgstyle-data');
+    var el = document.getElementsByClassName('image-back')[0];
+    el.style.backgroundImage = 'url('+listBG+')';
+    $('.image-back').addClass(listStyle);
+    $(this).find('div').slick('play');
+  }, function () {
+    var el = document.getElementsByClassName('image-back')[0];
+    el.style.backgroundImage = 'none';
+    $('.image-back').removeClass('bg-cover');
+    $(this).find('div').slick('pause');
+  });  
+}
 
 // $('#book-list .sliding, #work-list .sliding, #news-list .sliding').on('afterChange', function(){
 //   var attachmentA = $(this).find( '.slick-current h2' ).attr( 'perm-data' );

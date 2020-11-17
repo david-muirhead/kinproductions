@@ -27,6 +27,7 @@ module.exports = {
   'settings': {
     'import/core-modules': [],
     'import/ignore': [
+      'modernizr.js',
       'node_modules',
       '\\.(coffee|scss|css|less|hbs|svg|json)$',
     ],
