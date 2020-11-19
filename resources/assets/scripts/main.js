@@ -61,8 +61,8 @@ $('.slider-wrapper').slick({
 $('#book-list div, #work-list div, #news-list div').slick({
   dots: false,
   autoplay: false,
-  speed: 1700,
-  autoplaySpeed: 2000,
+  speed: 3000,
+  autoplaySpeed: 0,
   infinite: true,
   arrows: false,
   variableWidth: true,

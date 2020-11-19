@@ -1,5 +1,5 @@
-<header class="banner flex container-xl h-24 mt-6 invisible relative z-40">
-  <div class="breadcrumbs">
+<header class="banner flex container-xl h-24 mt-6 md:mt-10 invisible relative z-40">
+  <div class="breadcrumbs pt-2">
     @php 
       if ( function_exists('yoast_breadcrumb') ) {
         yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );

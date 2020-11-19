@@ -169,6 +169,16 @@ a {
   }
 }
 
+.single {
+  .breadcrumb_last {
+    @apply hidden;
+
+    @screen md {
+      @apply inline-block;
+    }
+  }
+}
+
 #breadcrumbs {
   @apply uppercase font-akz text-sm tracking-widest;
 
@@ -182,3 +192,9 @@ a {
     left: 0;
   }
 }
+
+.image-back {
+  -webkit-transition: background-image 5s ease-in-out;
+  transition: background-image 5s ease-in-out;
+}
+
